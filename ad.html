@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vaiable</title>
+        
+    </head>
+    <body>
+        <p>What is the magic word?</p>
+        <p ><input type="text"id="input"></p>
+        <p><button id="afterclick">Enter</button></p>
+        <script type="text/javascript">
+        
+        
+        document.getElementById("afterclick").onclick=function(){
+            var x= document.getElementById("input").value;
+            if(x=="Digesh"){
+            alert("You are RIGHT!!!");
+            }
+            else{
+            alert("Try Again");
+            }
+        }  
+        
+           
+        </script>
+    </body>
+</html>

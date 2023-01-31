@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vaiable</title>
+        
+    </head>
+    <body>
+        <p>How many fingers you are holding up? </p>
+        <select id="myNumber">
+            <option >0</option>
+            <option >1</option>
+            <option >2</option>
+            <option >3</option>
+            <option >4</option>
+            <option >5</option>
+        </select>
+        <button id="guess">Guess</button>
+        <script>
+            document.getElementById("guess").onclick= function(){
+                var myNumber = document.getElementById("myNumber").value;
+                var gotIt = false;
+                var numberofguess = 1;
+                while(gotIt==false){
+                    var guess = Math.floor(Math.random()*6); 
+                    if(myNumber == guess){
+                        alert("It took me :"+ numberofguess);
+                        gotIt= true;
+                    }
+                    else{
+                        numberofguess++;
+                    }
+                }
+
+
+            }
+
+        </script>
+        
+       
+    </body>
+</html>

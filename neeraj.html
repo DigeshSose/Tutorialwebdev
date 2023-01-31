@@ -1,0 +1,79 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100vh;
+      }
+      .container {
+        height: 500px;
+        width: 500px;
+        border: 2px solid black;
+        position: relative;
+      }
+      .shape {
+        height: 100px;
+        width: 100px;
+        background: #000;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+        border: 2px solid black;
+      }
+      .circle {
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main">
+      <h1>Test your reaction</h1>
+      <p class="reactionTime"></p>
+      <p class="lowestTime"></p>
+      <div class="container">
+        <div class="shape"></div>
+      </div>
+    </div>
+
+    <!-- //javascript -->
+    <script>
+      const shapeElement = document.querySelector(".shape");
+      function random() {
+        shapeElement.classList.toggle("circle");
+        let rgb1 = Math.floor(Math.random() * 255);
+        let rgb2 = Math.floor(Math.random() * 255);
+        let rgb3 = Math.floor(Math.random() * 255);
+        var randomVerticalAlignment = Math.floor(Math.random() * 350) + 100;
+        var randomHorizontalAlignment = Math.floor(Math.random() * 350) + 100;
+        document.querySelector(
+          ".container"
+        ).style.background = `rgb(${rgb2}, ${rgb3}, ${rgb1})`;
+        shapeElement.style.top = randomVerticalAlignment + "px";
+        shapeElement.style.left = randomHorizontalAlignment + "px";
+        shapeElement.style.background = `rgb(${rgb1}, ${rgb2}, ${rgb3})`;
+      }
+
+      let startTime = Date.now();
+      let endTime;
+      shapeElement.addEventListener("click", () => {
+        random();
+        endTime = Date.now();
+        const timeTaken = (endTime - startTime) / 1000;
+        document.querySelector(
+          ".reactionTime"
+        ).innerHTML = `Reaction Time = ${timeTaken} s`;
+        startTime = endTime;
+      });
+    </script>
+  </body>
+</html>

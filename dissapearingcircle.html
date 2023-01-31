@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Javascript ready</title>
+        <style>
+            body{
+                display: flex;
+                flex-wrap: wrap;
+                gap: 100px;
+            }
+            .circle{
+                width: 200px;
+                height: 200px;              
+                border-radius: 50%;
+
+            }
+            #redcircle{
+                background-color: red;
+            }
+            #bluecircle{
+                background-color: blue;
+            }
+            #greencircle{
+                background-color: green;
+            }
+            #pinkcircle{
+                background-color: pink;
+            }
+
+        </style>
+        
+        
+        
+    </head>
+    <body>
+        <h1 id="hide">Click on any color to make it disappear:</h1>
+        <div class="circle" id="redcircle"></div>
+        <div class="circle" id="bluecircle"></div>
+        <div class="circle" id="greencircle"></div>
+        <div class="circle" id="pinkcircle"></div>
+        
+        <script>
+            document.getElementById("redcircle").onclick=function(){
+                document.getElementById("redcircle").style.display="none";
+            }
+            document.getElementById("bluecircle").onclick=function(){
+                document.getElementById("bluecircle").style.display="none";
+            }
+            document.getElementById("greencircle").onclick=function(){
+                document.getElementById("greencircle").style.display="none";
+            }
+            document.getElementById("pinkcircle").onclick=function(){
+                document.getElementById("pinkcircle").style.display="none";
+            }
+            document.getElementById("hide").onclick=function(){
+                document.getElementById("hide").style.display="none";
+            }
+        </script>
+        
+    </body>
+</html>

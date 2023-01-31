@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Vaiable</title>
+    </head>
+    <body>
+        <input id="in" type="text"/>
+        <button id="change">Change the text</button>
+        <p id="para">This is some text</p>
+        <script type="text/javascript">
+            document.getElementById("change").onclick= function(){
+                var textinput = "";
+                textinput =document.getElementById("in").value;
+                document.getElementById("para").innerHTML= textinput;
+                document.getElementById("para").style.color="blue";
+            }
+           
+
+           
+        </script>
+    </body>
+</html>
